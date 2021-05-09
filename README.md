@@ -13,7 +13,7 @@ result:
   Main deliverables and figures <br />
 
 run_log:
-  Run log for each qsub script <br />
+  Run logs for each qsub script <br />
   
 script:
   Main R scripts and qsub files <br />
