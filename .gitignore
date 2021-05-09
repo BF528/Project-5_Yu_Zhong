@@ -1,5 +1,5 @@
 # ignore big files
-result/alignment
-result/cuffdiff
-result/cufflinks
-result/qc
+result/alignment/
+result/cuffdiff/
+result/cufflinks/
+result/qc/

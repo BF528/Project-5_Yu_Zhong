@@ -1,5 +1,0 @@
-file	condition	replicate_num	total_mass	norm_mass	internal_scale	external_scale
-/projectnb/bf528/users/dreadlocks/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam	P0	0	1.30562e+06	9.64859e+06	0.171218	1
-/project/bf528/project_2/data/samples//P0_2/accepted_hits.bam	P0	1	1.9391e+07	9.64859e+06	2.26713	1
-/project/bf528/project_2/data/samples//Ad_1/accepted_hits.bam	Ad	0	1.86586e+07	9.64859e+06	1.67287	1
-/project/bf528/project_2/data/samples//Ad_2/accepted_hits.bam	Ad	1	1.69822e+07	9.64859e+06	1.50342	1
