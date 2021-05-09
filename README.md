@@ -6,7 +6,7 @@ In this study, we aimed to identify differentially expressed genes associated wi
 
 
 # Contributor
-Yu Zhong --yuzhong@bu.edu
+Yu Zhong -- yuzhong@bu.edu
 
 # Repository Contents
 result:
