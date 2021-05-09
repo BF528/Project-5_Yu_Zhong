@@ -3,7 +3,7 @@ Group: dreadlocks <br />
 Roles: Programmer and Analyst
 
 # Contributor
-Yu Zhong <yuzhong@bu.edu>
+Yu Zhong @yuzhong@bu.edu
 
 # Repository Contents
 result:
