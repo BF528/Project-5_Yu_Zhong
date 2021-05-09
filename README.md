@@ -1,4 +1,4 @@
-# Project5: A Case Study of Transcriptional Profile of Mammalian Cardiac Regeneration with mRNA-seq
+# Project 5: A Case Study of Transcriptional Profile of Mammalian Cardiac Regeneration with mRNA-seq
 Group: dreadlocks <br />
 Roles: Programmer and Analyst <br />
 The majority of mammals have a limited ability to regenerate hearts after injury. In contrast, it found that some vertebrates such as zebrafish and newts can be capable of regenerating their hearts in the case of amputation throughout their adult lives, by proliferation of mature cardiac myocytes. Previous study pointed out that neonatal mice can regenerate heart after partial resection of the left ventricular apex[3]. To examine potential transcriptional changes behind this, O’Meara et al. interrogated global gene expression patterns over the course of mouse cardiac myocyte differentiation both in vitro and in vivo.
