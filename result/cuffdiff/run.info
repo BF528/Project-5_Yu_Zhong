@@ -1,0 +1,5 @@
+param	value
+cmd_line	cuffdiff -p 16 -L P0,Ad -u -b /project/bf528/project_2/reference/mm9.fa -o /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/result/cuffdiff /project/bf528/project_2/data/samples//merged_asm/merged.gtf /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam,/project/bf528/project_2/data/samples//P0_2/accepted_hits.bam /project/bf528/project_2/data/samples//Ad_1/accepted_hits.bam,/project/bf528/project_2/data/samples//Ad_2/accepted_hits.bam 
+version	2.2.1
+SVN_revision	Unversioned directory
+boost_version	105300

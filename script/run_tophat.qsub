@@ -1,0 +1,24 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -pe omp 16
+#$ -o /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_tophat_o
+#$ -e /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_tophat_e 
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+GENOMEDIR=/project/bf528/project_2/reference
+OUTPUT=/projectnb/bf528/users/dreadlocks
+
+module load samtools/0.1.19 bowtie2 boost tophat
+
+tophat -r 200 -G $GENOMEDIR/annot/mm9.gtf \
+--segment-length=20 --segment-mismatches=1 --no-novel-juncs -p 16 \
+-o $OUTPUT/project_5_yu_zhong/result/alignment/P0_1_tophat \
+$GENOMEDIR/mm9 \
+$OUTPUT/project_2/samples/P0_1_1.fastq $OUTPUT/project_2/samples/P0_1_2.fastq
+
+echo "Job finished: $(date +%F)"

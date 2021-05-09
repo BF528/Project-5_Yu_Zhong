@@ -1,0 +1,32 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -pe omp 1
+#$ -o /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_qc_o
+#$ -e /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_qc_e 
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+OUTPUT=/projectnb/bf528/users/dreadlocks
+
+module load python3 samtools/0.1.19 rseqc/3.0.0 bowtie2 boost tophat
+
+samtools index $OUTPUT/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam
+
+inner_distance.py -i $OUTPUT/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam \
+-r /project/bf528/project_2/reference/annot/mm9.bed \
+-o $OUTPUT/project_5_yu_zhong/result/qc/inner_distance_out
+
+geneBody_coverage.py -i $OUTPUT/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam \
+-r /project/bf528/project_2/reference/annot/mm9.bed \
+-o $OUTPUT/project_5_yu_zhong/result/qc/geneBody_out
+
+bam_stat.py -i $OUTPUT/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam > $OUTPUT/project_5_yu_zhong/result/qc/bam_stat.txt
+
+echo "Job finished: $(date +%F)"
+
+
+

@@ -1,0 +1,23 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -pe omp 16
+#$ -o /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_cufflinks_o
+#$ -e /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_cufflinks_e 
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+GENOMEDIR=/project/bf528/project_2/reference
+OUTPUT=/projectnb/bf528/users/dreadlocks
+
+module load cufflinks
+
+cufflinks --compatible-hits-norm -G $GENOMEDIR/annot/mm9.gtf \
+-b $GENOMEDIR/mm9.fa -u -p 16 \
+-o $OUTPUT/project_5_yu_zhong/result/cufflinks \
+$OUTPUT/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam
+
+echo "Job finished: $(date +%F)"

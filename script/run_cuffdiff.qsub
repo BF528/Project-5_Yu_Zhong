@@ -1,0 +1,26 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -pe omp 16
+#$ -o /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_cuffdiff_o
+#$ -e /projectnb/bf528/users/dreadlocks/project_5_yu_zhong/run_log/run_cuffdiff_e 
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+module load cufflinks
+
+P0BAM=/projectnb/bf528/users/dreadlocks/project_5_yu_zhong/result/alignment/P0_1_tophat/accepted_hits.bam
+SAMPLEDIR=/project/bf528/project_2/data/samples/
+P0REPS=$P0BAM,$SAMPLEDIR/P0_2/accepted_hits.bam
+ADREPS=$SAMPLEDIR/Ad_1/accepted_hits.bam,$SAMPLEDIR/Ad_2/accepted_hits.bam
+
+LABEL="P0,Ad"
+OUTDIR=/projectnb/bf528/users/dreadlocks/project_5_yu_zhong/result/cuffdiff 
+FASTA=/project/bf528/project_2/reference/mm9.fa
+
+cuffdiff -p 16 -L $LABEL -u -b $FASTA -o $OUTDIR $SAMPLEDIR/merged_asm/merged.gtf $P0REPS $ADREPS
+
+echo "Job finished: $(date +%F)"
