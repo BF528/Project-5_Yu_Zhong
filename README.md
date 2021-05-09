@@ -1,5 +1,5 @@
 # Project5: A Case Study of Transcriptional Profile of Mammalian Cardiac Regeneration with mRNA-seq
-Group: dreadlocks 
+Group: dreadlocks <br />
 Roles: Programmer and Analyst
 
 # Contributor
