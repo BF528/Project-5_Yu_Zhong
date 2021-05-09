@@ -1,0 +1,5 @@
+# ignore big files
+result/alignment
+result/cuffdiff
+result/cufflinks
+result/qc
